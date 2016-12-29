@@ -1,0 +1,79 @@
+<div class="containerTodo">
+    <div class="row">
+
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-8 blockTodo">
+
+            <!-- HEADER AND TO DO COUNT -->
+            <!--<div class="text-center">-->
+            <!--<h1>Priority list <span class="label label-info">{{ todos.length }}</span></h1>-->
+            <!--</div>-->
+
+            <!-- TO DO LIST -->
+            <div id="todo-list">
+                <div class="col-sm-4 col-sm-offset-4">
+                    <!-- LOOP OVER THE TODOS IN $scope.todos -->
+                    <div class="checkbox" ng-repeat="todo in todos">
+                        <label>
+                            <input type="checkbox" ng-click="deleteTodo(todo._id)"> {{ todo.text }}
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FORM TO CREATE TODOS -->
+            <div id="todo-form">
+                <div class="text-center">
+                    <form>
+                        <div class="form-group">
+                            <!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+                            <input type="text"
+                                   class="form-control input-lg text-center"
+                                   placeholder="What do you need to do ?"
+                                   ng-model="formData.text">
+                        </div>
+
+                        <!-- createToDo() WILL CREATE NEW TODOS -->
+                        <button type="submit" class="btn btn-primary btn-lg " ng-click="createTodo()">Add</button>
+
+                        <div class="btn-group" data-toggle="buttons">
+
+                            <label class="btn active priority0">
+                                <input type="radio" name="options" id="option1" autocomplete="off" checked> 0
+                            </label>
+                            <label class="btn priority1">
+                                <input type="radio" name="options" id="option2" autocomplete="off"> 1
+                            </label>
+                            <label class="btn priority2">
+                                <input type="radio" name="options" id="option3" autocomplete="off"> 2
+                            </label>
+                            <label class="btn priority3">
+                                <input type="radio" name="options" id="option4" autocomplete="off"> 3
+                            </label>
+
+                        </div>
+
+                    </form>
+
+
+
+                    <!--<div class="checkbox">-->
+                    <!--<label>-->
+                    <!--<input type="checkbox" class="radio" value="1">LOW-->
+                    <!--</label>-->
+                    <!--<label>-->
+                    <!--<input type="checkbox" class="radio" value="1">MEDIUM-->
+                    <!--</label>-->
+                    <!--<label>-->
+                    <!--<input type="checkbox" class="radio" value="1">HIGH-->
+                    <!--</label>-->
+                    <!--</div>-->
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
